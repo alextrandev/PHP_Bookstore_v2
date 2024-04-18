@@ -12,3 +12,5 @@ try {
 } catch (PDOException $e) {
     echo "Connection error: ", $e->getMessage();
 }
+
+$genres = ["Adventure", "Classic Literature", "Coming-of-age", "Fantasy", "Historical Fiction", "Horror", "Mystery", "Romance", "Science Fiction"];
