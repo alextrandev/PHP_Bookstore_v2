@@ -2,12 +2,14 @@
 
 $stmt = $pdo->prepare("SELECT * FROM books");
 $stmt->execute();
-$rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
+$books = $stmt->fetchAll(PDO::FETCH_ASSOC);
+$filterGenre = $_GET["genre"] ?? true; //true mean all genre
+$filteredBooks = array_filter($books, fn ($book) => $book["genre"] == $filterGenre);
 ?>
 
-<h2><?= $_GET["genre"] ?? "All books" ?></h2>
+<h2><?= $filterGenre === true ? "All books" : $filterGenre ?></h2>
 
-<?php foreach ($rows as $bookNumber => $row) :
+<?php foreach ($filteredBooks as $filteredBook) :
     [
         "book_id" => $id,
         "title" => $title,
@@ -15,7 +17,7 @@ $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
         "author" => $author,
         "publishing_year" => $year,
         "genre" => $genre
-    ] = $row;
+    ] = $filteredBook;
 
     echo <<<HTML
         <section class="book">
