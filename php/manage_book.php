@@ -1,4 +1,6 @@
-<?php require_once './components/header.php' ?>
+<?php
+$manageBookPath = "manage_book.php";
+require_once './components/header.php' ?>
 
 <h2><?= $_GET["genre"] ?? "All books" ?></h2>
 <section class="book">

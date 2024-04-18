@@ -35,7 +35,8 @@ require_once "./components/config.php";
             <ul>
                 <li><a href="<?= BASE_URL ?>">All</a></li>
                 <?php foreach ($genres as $genre) : ?>
-                    <li><a href="<?= BASE_URL ?>?genre=<?= $genre ?>"><?= $genre ?></a></li>
+                    <!-- $manageBookPath is to avoid the link take user back to index page when on manage book page -->
+                    <li><a href="<?= BASE_URL ?><?= $manageBookPath ?? "" ?>?genre=<?= $genre ?>"><?= $genre ?></a></li>
                 <?php endforeach; ?>
             </ul>
         </nav>
