@@ -70,7 +70,7 @@ main {
   float: right;
 }
 
-.publishing-info {
+.publishing_info {
   color: #808d9a;
   margin-top: 0px;
 }
@@ -80,8 +80,8 @@ label {
   width: 100px;
 }
 
-.deleteform,
-.edit_form {
+.delete_button,
+.edit_button {
   float: right;
   margin-left: 0.5rem;
 }

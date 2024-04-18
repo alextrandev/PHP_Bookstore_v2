@@ -1,8 +1,9 @@
-<?php require_once './components/header.php'; ?>
+<?php require_once './components/header.php' ?>
 
 <h2><?= $_GET["genre"] ?? "All books" ?></h2>
 <section class="book">
-    <a class="bookmark fa fa-star" href="set_favorite.php?add=0" target="_blank"></a>
+    <a href="delete_book.php?id=0"><button class="delete_button">Delete</button></a>
+    <a href="add_book.php?id=0"><button class="edit_button">Edit</button></a>
     <h3>Book title</h3>
     <p class="publishing_info">
         <span class="author">Author</span>,
@@ -11,4 +12,4 @@
     <p class="description">Description</p>
 </section>
 
-<?php require_once './components/footer.php' ?>
+<?php require_once './components/footer.php';

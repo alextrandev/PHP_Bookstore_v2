@@ -25,9 +25,11 @@ require_once "./components/config.php";
         <nav id="main-navi">
             <ul>
                 <li><a href="<?= BASE_URL ?>">Home</a></li>
-                <li><a href="<?= BASE_URL ?>manage.php">Manage books</a></li>
-                <li><a href="<?= BASE_URL ?>register.php">Register</a></li>
+                <li><a href="<?= BASE_URL ?>add_book.php">Add book</a></li>
+                <li><a href="<?= BASE_URL ?>manage_book.php">Manage books</a></li>
+                <li><a href="<?= BASE_URL ?>profile.php">My Profile</a></li>
                 <li><a href="<?= BASE_URL ?>login.php">Login</a></li>
+                <li><a href="<?= BASE_URL ?>register.php">Register</a></li>
                 <li><a href="<?= BASE_URL ?>logout.php">Logout</a></li>
             </ul>
             <ul>
