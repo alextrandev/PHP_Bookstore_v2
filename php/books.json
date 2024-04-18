@@ -1,0 +1,282 @@
+[
+    {
+        "title": "The Hobbit",
+        "description": "The Hobbit follows the journey of Bilbo Baggins, a hobbit who embarks on an epic quest to reclaim the Lonely Mountain and its treasure from the dragon Smaug. Along the way, he encounters elves, dwarves, and other fantastical creatures, facing challenges that test his courage and resourcefulness.",
+        "author": "J.R.R. Tolkien",
+        "publishing_year": 1937,
+        "genre": "Fantasy"
+    },
+    {
+        "title": "To Kill a Mockingbird",
+        "description": "Set in the fictional town of Maycomb, Alabama, To Kill a Mockingbird tells the story of Scout Finch, her brother Jem, and their father Atticus, a lawyer defending a black man wrongly accused of raping a white woman. Through Scout’s eyes, we witness themes of racial injustice, moral growth, and the power of empathy.",
+        "author": "Harper Lee",
+        "publishing_year": 1960,
+        "genre": "Classic Literature"
+    },
+    {
+        "title": "Harry Potter and the Sorcerer's Stone",
+        "description": "The first book in the Harry Potter series introduces us to a young wizard named Harry Potter, who learns on his eleventh birthday that he is the orphaned son of two powerful wizards. At Hogwarts School of Witchcraft and Wizardry, Harry discovers his magical abilities and unravels the mystery of his past while facing the dark wizard Voldemort.",
+        "author": "J.K. Rowling",
+        "publishing_year": 1997,
+        "genre": "Fantasy"
+    },
+    {
+        "title": "1984",
+        "description": "Set in a dystopian future where totalitarianism reigns, 1984 follows the story of Winston Smith, a low-ranking member of the ruling Party. As he rebels against the oppressive regime, Winston grapples with themes of surveillance, propaganda, and the erosion of truth and freedom.",
+        "author": "George Orwell",
+        "publishing_year": 1949,
+        "genre": "Science Fiction"
+    },
+    {
+        "title": "Pride and Prejudice",
+        "description": "Pride and Prejudice explores the lives of the Bennet sisters, particularly Elizabeth Bennet, as they navigate the social norms and expectations of early 19th-century England. The novel is a witty commentary on marriage, class, and the pursuit of happiness.",
+        "author": "Jane Austen",
+        "publishing_year": 1813,
+        "genre": "Romance"
+    },
+    {
+        "title": "The Catcher in the Rye",
+        "description": "Narrated by Holden Caulfield, a disenchanted teenager expelled from prep school, The Catcher in the Rye captures the angst and alienation of youth in post-World War II America. Holden embarks on a journey through New York City, grappling with themes of identity, authenticity, and the loss of innocence.",
+        "author": "J.D. Salinger",
+        "publishing_year": 1951,
+        "genre": "Coming-of-age"
+    },
+    {
+        "title": "The Great Gatsby",
+        "description": "Set in the Roaring Twenties, The Great Gatsby follows the enigmatic millionaire Jay Gatsby and his obsession with the beautiful Daisy Buchanan. Through the lens of narrator Nick Carraway, the novel explores themes of love, wealth, and the American Dream.",
+        "author": "F. Scott Fitzgerald",
+        "publishing_year": 1925,
+        "genre": "Classic Literature"
+    },
+    {
+        "title": "The Shining",
+        "description": "The Shining follows Jack Torrance, a struggling writer who takes a job as the winter caretaker of the remote Overlook Hotel. As Jack, his wife Wendy, and their son Danny settle into the eerie hotel, supernatural forces begin to unravel Jack’s sanity, leading to a terrifying descent into madness.",
+        "author": "Stephen King",
+        "publishing_year": 1977,
+        "genre": "Horror"
+    },
+    {
+        "title": "Frankenstein",
+        "description": "Frankenstein tells the story of Victor Frankenstein, a young scientist who creates a grotesque creature in an unorthodox experiment. As the creature grapples with its own identity and purpose, Victor is consumed by guilt and fear, leading to tragic consequences.",
+        "author": "Mary Shelley",
+        "publishing_year": 1818,
+        "genre": "Horror"
+    },
+    {
+        "title": "Moby-Dick",
+        "description": "Moby-Dick is a gripping tale of obsession and revenge centered around Captain Ahab’s relentless pursuit of the elusive white whale. Narrated by Ishmael, a sailor aboard the whaling ship Pequod, the novel explores themes of fate, madness, and the inherent conflict between man and nature.",
+        "author": "Herman Melville",
+        "publishing_year": 1851,
+        "genre": "Adventure"
+    },
+    {
+        "title": "Dracula",
+        "description": "Dracula is an epistolary novel that chronicles the story of Count Dracula’s attempt to relocate from Transylvania to England in order to spread the undead curse. Led by Professor Abraham Van Helsing, a group of individuals must stop Dracula before he unleashes his reign of terror upon London.",
+        "author": "Bram Stoker",
+        "publishing_year": 1897,
+        "genre": "Horror"
+    },
+    {
+        "title": "The Hitchhiker's Guide to the Galaxy",
+        "description": "The Hitchhiker's Guide to the Galaxy follows the misadventures of Arthur Dent, an ordinary human who is swept off Earth just before its destruction to make way for a hyperspace bypass. Joined by Ford Prefect, an alien researcher for the titular guide, Arthur embarks on a cosmic journey filled with absurdity, humor, and philosophical musings.",
+        "author": "Douglas Adams",
+        "publishing_year": 1979,
+        "genre": "Science Fiction"
+    },
+    {
+        "title": "Jane Eyre",
+        "description": "Jane Eyre is a bildungsroman that tells the story of its titular character, an orphaned girl who rises from adversity to find love and independence. As she navigates through various trials and tribulations, Jane confronts issues of class, gender, and morality.",
+        "author": "Charlotte Brontë",
+        "publishing_year": 1847,
+        "genre": "Classic Literature"
+    },
+    {
+        "title": "The Hunger Games",
+        "description": "Set in a dystopian future where teenagers are forced to compete in a televised fight to the death, The Hunger Games follows the courageous Katniss Everdeen as she volunteers to take her sister’s place in the brutal competition. As Katniss battles for survival, she becomes a symbol of hope and rebellion against the oppressive Capitol.",
+        "author": "Suzanne Collins",
+        "publishing_year": 2008,
+        "genre": "Science Fiction"
+    },
+    {
+        "title": "The Picture of Dorian Gray",
+        "description": "The Picture of Dorian Gray explores the consequences of vanity and hedonism through the story of Dorian Gray, a young man who remains eternally youthful while a portrait of him ages and reflects the moral decay of his soul. As Dorian indulges in a life of excess and debauchery, he descends into darkness with tragic results.",
+        "author": "Oscar Wilde",
+        "publishing_year": 1890,
+        "genre": "Horror"
+    },
+    {
+        "title": "The Odyssey",
+        "description": "The Odyssey is an epic poem attributed to the ancient Greek poet Homer, recounting the journey of Odysseus as he attempts to return home to Ithaca after the Trojan War. Along the way, Odysseus encounters mythical creatures, faces divine intervention, and struggles against the wrath of the gods.",
+        "author": "Homer",
+        "publishing_year": "8th century BCE",
+        "genre": "Adventure"
+    },
+    {
+        "title": "The Road",
+        "description": "The Road is a post-apocalyptic novel that follows a father and his young son as they journey through a desolate landscape in search of safety and a better future. Amidst the bleakness of their surroundings, the duo must confront the darkness within themselves and the harsh realities of survival.",
+        "author": "Cormac McCarthy",
+        "publishing_year": 2006,
+        "genre": "Science Fiction"
+    },
+    {
+        "title": "Brave New World",
+        "description": "Brave New World is a dystopian novel that envisions a future society where citizens are engineered and conditioned for social stability and conformity. When the free-spirited Bernard Marx discovers a savage from a reservation, he begins to question the superficiality and emptiness of his own world.",
+        "author": "Aldous Huxley",
+        "publishing_year": 1932,
+        "genre": "Science Fiction"
+    },
+    {
+        "title": "Alice's Adventures in Wonderland",
+        "description": "Alice's Adventures in Wonderland follows the whimsical journey of a young girl named Alice as she falls down a rabbit hole into a fantastical world populated by peculiar creatures and absurd characters. Guided by the enigmatic Cheshire Cat, Alice navigates through a series of nonsensical adventures and encounters, ultimately seeking to find her way home.",
+        "author": "Lewis Carroll",
+        "publishing_year": 1865,
+        "genre": "Fantasy"
+    },
+    {
+        "title": "Wuthering Heights",
+        "description": "Wuthering Heights is a dark and brooding tale of passion and revenge set on the Yorkshire moors. Through the turbulent relationship between Heathcliff and Catherine Earnshaw, the novel explores themes of love, obsession, and the destructive power of the human spirit.",
+        "author": "Emily Brontë",
+        "publishing_year": 1847,
+        "genre": "Classic Literature"
+    },
+    {
+        "title": "The Chronicles of Narnia: The Lion, the Witch and the Wardrobe",
+        "description": "The Lion, the Witch and the Wardrobe is the first book in C.S. Lewis's beloved Chronicles of Narnia series. It tells the story of four siblings who discover a magical world inside a wardrobe and become embroiled in a struggle between good and evil, led by the noble lion Aslan.",
+        "author": "C.S. Lewis",
+        "publishing_year": 1950,
+        "genre": "Fantasy"
+    },
+    {
+        "title": "The Alchemist",
+        "description": "The Alchemist follows the journey of Santiago, a young shepherd who dreams of finding a hidden treasure in Egypt. Along the way, he encounters a series of mentors who teach him about the importance of following one's dreams and listening to the language of the universe.",
+        "author": "Paulo Coelho",
+        "publishing_year": 1988,
+        "genre": "Adventure"
+    },
+    {
+        "title": "Gone with the Wind",
+        "description": "Gone with the Wind is a sweeping epic set against the backdrop of the American Civil War and Reconstruction era. It follows the life of Scarlett O'Hara, a headstrong Southern belle, as she navigates love, loss, and survival amidst the chaos of war.",
+        "author": "Margaret Mitchell",
+        "publishing_year": 1936,
+        "genre": "Historical Fiction"
+    },
+    {
+        "title": "The Count of Monte Cristo",
+        "description": "The Count of Monte Cristo is a tale of revenge, redemption, and the power of resilience. After being wrongfully imprisoned, Edmond Dantès escapes and sets out to seek vengeance on those who betrayed him, ultimately finding solace in forgiveness and love.",
+        "author": "Alexandre Dumas",
+        "publishing_year": 1844,
+        "genre": "Adventure"
+    },
+    {
+        "title": "The Road Less Traveled",
+        "description": "The Road Less Traveled is a self-help book that explores the importance of discipline, responsibility, and spiritual growth. Drawing on his experience as a psychiatrist and spiritual teacher, M. Scott Peck offers practical advice for navigating life's challenges with courage and grace.",
+        "author": "M. Scott Peck",
+        "publishing_year": 1978,
+        "genre": "Self-help"
+    },
+    {
+        "title": "The Bell Jar",
+        "description": "The Bell Jar is a semi-autobiographical novel that offers a candid and poignant portrayal of mental illness. Through the lens of protagonist Esther Greenwood, Sylvia Plath explores themes of identity, alienation, and the pressures of societal expectations.",
+        "author": "Sylvia Plath",
+        "publishing_year": 1963,
+        "genre": "Autobiographical Fiction"
+    },
+    {
+        "title": "The Catcher in the Rye",
+        "description": "The Catcher in the Rye follows the story of Holden Caulfield, a disenchanted teenager expelled from prep school. As he embarks on a journey through New York City, Holden grapples with themes of identity, authenticity, and the loss of innocence.",
+        "author": "J.D. Salinger",
+        "publishing_year": 1951,
+        "genre": "Coming-of-age"
+    },
+    {
+        "title": "The Name of the Wind",
+        "description": "The Name of the Wind is the first book in Patrick Rothfuss's epic fantasy series, The Kingkiller Chronicle. It follows the life of Kvothe, a legendary figure known for his magical prowess and daring adventures, as he recounts his journey from humble beginnings to becoming a renowned hero.",
+        "author": "Patrick Rothfuss",
+        "publishing_year": 2007,
+        "genre": "Fantasy"
+    },
+    {
+        "title": "The Handmaid's Tale",
+        "description": "The Handmaid's Tale is a dystopian novel set in a future society where women are subjugated and stripped of their rights. Offred, the protagonist, is a Handmaid forced into reproductive servitude, as she navigates the oppressive regime of the Republic of Gilead.",
+        "author": "Margaret Atwood",
+        "publishing_year": 1985,
+        "genre": "Dystopian Fiction"
+    },
+    {
+        "title": "The Picture of Dorian Gray",
+        "description": "The Picture of Dorian Gray explores the consequences of vanity and hedonism through the story of Dorian Gray, a young man who remains eternally youthful while a portrait of him ages and reflects the moral decay of his soul.",
+        "author": "Oscar Wilde",
+        "publishing_year": 1890,
+        "genre": "Gothic Fiction"
+    },
+    {
+        "title": "The Road",
+        "description": "The Road is a post-apocalyptic novel that follows a father and his young son as they journey through a desolate landscape in search of safety and a better future.",
+        "author": "Cormac McCarthy",
+        "publishing_year": 2006,
+        "genre": "Post-apocalyptic Fiction"
+    },
+    {
+        "title": "Brave New World",
+        "description": "Brave New World is a dystopian novel that envisions a future society where citizens are engineered and conditioned for social stability and conformity.",
+        "author": "Aldous Huxley",
+        "publishing_year": 1932,
+        "genre": "Speculative Fiction"
+    },
+    {
+        "title": "Slaughterhouse-Five",
+        "description": "Slaughterhouse-Five is a satirical novel that blends elements of science fiction, war, and autobiography. Through the eyes of protagonist Billy Pilgrim, Kurt Vonnegut explores the absurdity of war, the concept of free will, and the nature of time.",
+        "author": "Kurt Vonnegut",
+        "publishing_year": 1969,
+        "genre": "Satirical Fiction"
+    },
+    {
+        "title": "The Brothers Karamazov",
+        "description": "The Brothers Karamazov is a philosophical novel that delves into questions of morality, spirituality, and the nature of existence. Through the tumultuous lives of the Karamazov brothers, Fyodor Dostoevsky explores themes of faith, doubt, and redemption.",
+        "author": "Fyodor Dostoevsky",
+        "publishing_year": 1880,
+        "genre": "Philosophical Fiction"
+    },
+    {
+        "title": "The Road to Serfdom",
+        "description": "The Road to Serfdom is a classic work of political philosophy that argues against the dangers of collectivism and centralized planning. Written by Austrian economist Friedrich Hayek, the book warns of the erosion of individual freedom in societies that prioritize government control over economic and social life.",
+        "author": "Friedrich Hayek",
+        "publishing_year": 1944,
+        "genre": "Political Philosophy"
+    },
+    {
+        "title": "The Stand",
+        "description": "The Stand is a post-apocalyptic horror novel that depicts a world ravaged by a deadly pandemic. As survivors struggle to rebuild society amidst the chaos, they must confront the forces of good and evil embodied by two charismatic leaders, Mother Abagail and Randall Flagg.",
+        "author": "Stephen King",
+        "publishing_year": 1978,
+        "genre": "Horror"
+    },
+    {
+        "title": "The Road Not Taken and Other Poems",
+        "description": "The Road Not Taken and Other Poems is a collection of poetry by Robert Frost, one of America's most celebrated poets. Featuring iconic works such as 'The Road Not Taken' and 'Stopping by Woods on a Snowy Evening,' the collection explores themes of nature, human experience, and the passage of time.",
+        "author": "Robert Frost",
+        "publishing_year": 1916,
+        "genre": "Poetry"
+    },
+    {
+        "title": "A Tale of Two Cities",
+        "description": "A Tale of Two Cities is a historical novel set against the backdrop of the French Revolution. It follows the lives of characters in both London and Paris as they navigate the tumultuous events of the era, exploring themes of sacrifice, redemption, and the inevitability of change.",
+        "author": "Charles Dickens",
+        "publishing_year": 1859,
+        "genre": "Historical Fiction"
+    },
+    {
+        "title": "The Girl with the Dragon Tattoo",
+        "description": "The Girl with the Dragon Tattoo is a gripping thriller that follows journalist Mikael Blomkvist and hacker Lisbeth Salander as they investigate a decades-old disappearance. As they delve deeper into the case, they uncover a web of corruption, conspiracy, and dark family secrets.",
+        "author": "Stieg Larsson",
+        "publishing_year": 2005,
+        "genre": "Thriller"
+    },
+    {
+        "title": "The Hitchhiker's Guide to the Galaxy",
+        "description": "The Hitchhiker's Guide to the Galaxy follows the misadventures of Arthur Dent, an ordinary human who is swept off Earth just before its destruction to make way for a hyperspace bypass.",
+        "author": "Douglas Adams",
+        "publishing_year": 1979,
+        "genre": "Science Fiction"
+    }
+]
