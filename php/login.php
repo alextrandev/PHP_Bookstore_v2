@@ -6,7 +6,7 @@ if (isset($_SESSION["user"])) {
 }
 
 if (isset($_POST["login_as_guest"])) {
-    $_SESSION["user"] = "guest";
+    $_SESSION["user"] = ["user_id" => 999999, "firstname" => "Guest"];
     header("Location: " . BASE_URL . "profile.php");
     exit();
 }
@@ -23,7 +23,7 @@ if (isset($_POST["login_form"])) {
             throw new Exception("Wrong email format");
         }
 
-        $stmt = $pdo->prepare("SELECT user_id, password FROM users WHERE email=?");
+        $stmt = $pdo->prepare("SELECT * FROM users WHERE email=?");
         $stmt->execute([$email]);
         $total = $stmt->rowCount();
 
@@ -36,13 +36,13 @@ if (isset($_POST["login_form"])) {
             throw new Exception("Password cannot be empty");
         }
 
-        $rows = $stmt->fetch(PDO::FETCH_ASSOC);
+        $row = $stmt->fetch(PDO::FETCH_ASSOC);
 
-        if (!password_verify($pwd, $rows["password"])) {
+        if (!password_verify($pwd, $row["password"])) {
             throw new Exception("Email or password does not match");
         }
 
-        $_SESSION["user"] = $rows["user_id"];
+        $_SESSION["user"] = $row;
         header("Location: " . BASE_URL . "profile.php");
         exit();
     } catch (Exception $e) {
