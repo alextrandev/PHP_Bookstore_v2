@@ -72,7 +72,7 @@ if (isset($_POST["register_form"])) {
         </tr>
         <tr>
             <td><Label for="email">E-mail address</Label></td>
-            <td><input type="text" name="email" id="email" value="<?= $email ?? "" ?>"></td>
+            <td><input type="text" name="email" id="email" value="<?= $_GET["email"] ?? $email ?? "" ?>"></td>
         </tr>
         <tr>
             <td><Label for="password">Password</Label></td>

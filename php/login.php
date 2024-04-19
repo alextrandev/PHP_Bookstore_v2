@@ -7,6 +7,42 @@ if (isset($_POST["login_as_guest"])) {
 }
 
 if (isset($_POST["login_form"])) {
+    try {
+        ["email" => $email, "password" => $pwd] = $_POST;
+
+        if ($email == "") {
+            throw new Exception("Email cannot be empty");
+        }
+
+        if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+            throw new Exception("Wrong email format");
+        }
+
+        $stmt = $pdo->prepare("SELECT user_id, password FROM users WHERE email=?");
+        $stmt->execute([$email]);
+        $total = $stmt->rowCount();
+
+        if (!$total) {
+            $register = "<a href=" . BASE_URL . "register.php?email=$email>Register new account</a>";
+            throw new Exception("Email not found. Try again or $register");
+        }
+
+        if ($pwd == "") {
+            throw new Exception("Password cannot be empty");
+        }
+
+        $rows = $stmt->fetch(PDO::FETCH_ASSOC);
+
+        if (!password_verify($pwd, $rows["password"])) {
+            throw new Exception("Email or password does not match");
+        }
+
+        $_SESSION["user"] = $rows["user_id"];
+        header("Location: " . BASE_URL . "profile.php");
+        exit();
+    } catch (Exception $e) {
+        $error_msg = $e->getMessage();
+    }
 }
 
 ?>
