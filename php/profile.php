@@ -5,8 +5,35 @@ if (!isset($_SESSION["user"])) {
     exit();
 }
 
+[
+    "user_id" => $user_id,
+    "firstname" => $fn,
+    "lastname" => $ln,
+    "email" => $email,
+    "created_at" => $createdAt
+] = $_SESSION["user"];
 ?>
 
-<p>Profile</p>
+<h2>Welcome <?= $fn ?>!</h2>
+<h3>Your profile</h3>
+<table>
+    <tr>
+        <td>First name</td>
+        <td><?= $fn ?></td>
+    </tr>
+    <tr>
+        <td>Last name</td>
+        <td><?= $ln ?></td>
+    </tr>
+    <tr>
+        <td>E-mail</td>
+        <td><?= $email ?></td>
+    </tr>
+    <tr>
+        <td>Member from</td>
+        <td><?= implode("/", array_reverse(explode("-", explode(" ", $createdAt)[0]))) ?></td>
+    </tr>
+</table>
+<h3>Your favorite book</h3>
 
 <?php require_once './components/footer.php'; ?>
