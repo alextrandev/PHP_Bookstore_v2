@@ -45,7 +45,7 @@ if (isset($_POST["register_form"])) {
         $pwd_hashed = password_hash($pwd, PASSWORD_DEFAULT);
         $stmt = $pdo->prepare("INSERT INTO users (firstname, lastname, email, password) VALUES (?, ?, ?, ?)");
         $stmt->execute([$fn, $ln, $email, $pwd_hashed]);
-        header("Location: " . BASE_URL . "login.php?register=success");
+        header("Location: " . BASE_URL . "login.php?register=success&email=" . $email);
     } catch (Exception $e) {
         $error_msg = $e->getMessage();
     }
