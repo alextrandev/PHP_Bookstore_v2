@@ -1,6 +1,12 @@
 <?php
 $manageBookPath = "manage_book.php";
-require_once './components/header.php' ?>
+require_once './components/header.php';
+
+if (!isset($_SESSION["user"])) {
+    header("Location: " . BASE_URL . "login.php?login=required");
+    exit();
+}
+?>
 
 <h2><?= $_GET["genre"] ?? "All books" ?></h2>
 <section class="book">

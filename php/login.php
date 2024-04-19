@@ -1,5 +1,10 @@
 <?php require_once './components/header.php';
 
+if (isset($_SESSION["user"])) {
+    header("Location: " . BASE_URL . "profile.php");
+    exit();
+}
+
 if (isset($_POST["login_as_guest"])) {
     $_SESSION["user"] = "guest";
     header("Location: " . BASE_URL . "profile.php");
@@ -56,6 +61,8 @@ if (isset($_POST["login_form"])) {
         <p class="success_msg">Account registration successful. You can now login</p>
     <?php elseif (isset($_GET["logout"])) : ?>
         <p class="success_msg">Logout successful</p>
+    <?php elseif (isset($_GET["login"])) : ?>
+        <p class="error_msg">Please login first</p>
     <?php endif; ?>
 
     <table>

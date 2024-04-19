@@ -1,5 +1,10 @@
 <?php require_once './components/header.php';
 
+if (isset($_SESSION["user"])) {
+    header("Location: " . BASE_URL . "profile.php");
+    exit();
+}
+
 if (isset($_POST["register_form"])) {
     try {
         [
