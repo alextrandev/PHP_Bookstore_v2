@@ -54,6 +54,11 @@ if (isset($_POST["register_form"])) {
 
 <form action="" method="post" class="form_container">
     <h2>Create new user account</h2>
+
+    <?php if (isset($error_msg)) : ?>
+        <p class="error_msg"><?= $error_msg ?></p>
+    <?php endif; ?>
+
     <table>
         <tr>
             <td><Label for="firstname">First name</Label></td>
@@ -82,11 +87,6 @@ if (isset($_POST["register_form"])) {
             <td><input type="submit" name="register_form" value="Register"></td>
         </tr>
     </table>
-
-    <?php if (isset($error_msg)) : ?>
-        <p class="error_msg"><?= $error_msg ?></p>
-    <?php endif; ?>
-
 </form>
 
 <?php require_once './components/footer.php'; ?>
