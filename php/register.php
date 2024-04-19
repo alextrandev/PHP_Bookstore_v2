@@ -22,14 +22,34 @@ if (isset($_POST["register_form"])) {
             throw new Exception("Email cannot be empty");
         }
 
+        if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+            throw new Exception("Wrong email format");
+        }
+
+        $stmt = $pdo->prepare("SELECT * FROM users WHERE email=?");
+        $stmt->execute([$email]);
+        $total = $stmt->rowCount();
+        if ($total) {
+            $login = "<a href=" . BASE_URL . "login.php>Login</a>";
+            throw new Exception("Email already exist. Try again or $login");
+        }
+
         if ($pwd == "") {
             throw new Exception("Password cannot be empty");
         }
+
+        if ($pwd !== $pwd_retype) {
+            throw new Exception("Passwords does not match");
+        }
+
+        $pwd_hashed = password_hash($pwd, PASSWORD_DEFAULT);
+        $stmt = $pdo->prepare("INSERT INTO users (firstname, lastname, email, password) VALUES (?, ?, ?, ?)");
+        $stmt->execute([$fn, $ln, $email, $pwd_hashed]);
+        header("Location: " . BASE_URL . "login.php?register=success");
     } catch (Exception $e) {
         $error_msg = $e->getMessage();
     }
 }
-
 ?>
 
 <form action="" method="post" class="form_container">
@@ -51,11 +71,11 @@ if (isset($_POST["register_form"])) {
         </tr>
         <tr>
             <td><Label for="password">Password</Label></td>
-            <td><input type="text" name="password" id="password"></td>
+            <td><input type="password" name="password" id="password"></td>
         </tr>
         <tr>
             <td><Label for="password_retype">Retype password</Label></td>
-            <td><input type="text" name="password_retype" id="password_retype"></td>
+            <td><input type="password" name="password_retype" id="password_retype"></td>
         </tr>
         <tr>
             <td></td>
