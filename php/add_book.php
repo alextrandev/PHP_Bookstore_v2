@@ -31,6 +31,13 @@ if (isset($_POST["add_book_form"])) {
             $author = "Unknown author";
         }
 
+        $stmt = $pdo->prepare("SELECT * FROM books WHERE title=? AND author=?");
+        $stmt->execute([$title, $author]);
+        $total = $stmt->rowCount();
+        if ($total) {
+            throw new Exception("Book already added. Please add another book");
+        }
+
         if ($year == "") {
             $year = "Undated";
         }
