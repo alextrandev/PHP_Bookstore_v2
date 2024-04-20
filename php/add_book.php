@@ -41,6 +41,11 @@ if (isset($_POST["add_book_form"])) {
         if ($year == "") {
             $year = "Undated";
         }
+
+        $stmt = $pdo->prepare("INSERT INTO books (title, description, author, publishing_year, genre) VALUES (?, ?, ?, ?, ?)");
+        $stmt->execute([$title, $desc, $author, $year, $genre]);
+
+        $success_msg = "New book added";
     } catch (Exception $e) {
         $error_msg = $e->getMessage();
     }
@@ -53,6 +58,18 @@ if (isset($_POST["add_book_form"])) {
 
     <?php if (isset($error_msg)) : ?>
         <p class="error_msg"><?= $error_msg ?></p>
+    <?php elseif (isset($success_msg)) : ?>
+        <p class="success_msg"><?= $success_msg ?></p>
+        <section class="book">
+            <a href="delete_book.php?id=0"><button class="delete_button">Delete</button></a>
+            <a href="edit_book.php?id=0"><button class="edit_button">Edit</button></a>
+            <h3><?= $title ?></h3>
+            <p class="publishing_info">
+                <span class="author"><?= $author ?></span>,
+                <span class="year"><?= $year ?></span>
+            </p>
+            <p class="description"><?= $desc ?></p>
+        </section>
     <?php endif; ?>
 
     <table>
