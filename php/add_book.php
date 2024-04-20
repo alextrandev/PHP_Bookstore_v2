@@ -1,8 +1,4 @@
-<?php
-
-use Symfony\Component\DependencyInjection\Attribute\Exclude;
-
-require_once './components/header.php';
+<?php require_once './components/header.php';
 
 if (!isset($_SESSION["user"])) {
     header("Location: " . BASE_URL . "login.php?login=required");
@@ -44,7 +40,7 @@ if (isset($_POST["add_book_form"])) {
 
         $stmt = $pdo->prepare("INSERT INTO books (title, description, author, publishing_year, genre) VALUES (?, ?, ?, ?, ?)");
         $stmt->execute([$title, $desc, $author, $year, $genre]);
-
+        $id = $pdo->lastInsertId();
         $success_msg = "New book added";
     } catch (Exception $e) {
         $error_msg = $e->getMessage();
@@ -61,8 +57,8 @@ if (isset($_POST["add_book_form"])) {
     <?php elseif (isset($success_msg)) : ?>
         <p class="success_msg"><?= $success_msg ?></p>
         <section class="book">
-            <a href="delete_book.php?id=0"><button class="delete_button">Delete</button></a>
-            <a href="edit_book.php?id=0"><button class="edit_button">Edit</button></a>
+            <a href="delete_book.php?id=<?= $id ?>"><button class="delete_button">Delete</button></a>
+            <a href="edit_book.php?id=<?= $id ?>"><button class="edit_button">Edit</button></a>
             <h3><?= $title ?></h3>
             <p class="publishing_info">
                 <span class="author"><?= $author ?></span>,

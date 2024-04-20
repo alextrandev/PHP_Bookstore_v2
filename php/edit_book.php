@@ -6,6 +6,6 @@ if (!isset($_SESSION["user"])) {
 }
 ?>
 
-<p>Set favorite</p>
+<p>Delete book</p>
 
 <?php require_once './components/footer.php'; ?>
