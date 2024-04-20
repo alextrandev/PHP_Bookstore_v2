@@ -1,9 +1,44 @@
-<?php require_once './components/header.php';
+<?php
+
+use Symfony\Component\DependencyInjection\Attribute\Exclude;
+
+require_once './components/header.php';
 
 if (!isset($_SESSION["user"])) {
     header("Location: " . BASE_URL . "login.php?login=required");
     exit();
 }
+
+if (isset($_POST["add_book_form"])) {
+    try {
+        [
+            "title" => $title,
+            "description" => $desc,
+            "author" => $author,
+            "year" => $year,
+            "genre" => $genre
+        ] = $_POST;
+
+        if ($title == "") {
+            throw new Exception("Title cannot be empty");
+        }
+
+        if ($desc == "") {
+            $desc = "Not available";
+        }
+
+        if ($author == "") {
+            $author = "Unknown author";
+        }
+
+        if ($year == "") {
+            $year = "Undated";
+        }
+    } catch (Exception $e) {
+        $error_msg = $e->getMessage();
+    }
+}
+
 ?>
 
 <form action="" method="post" class="form_container">
@@ -37,7 +72,7 @@ if (!isset($_SESSION["user"])) {
         <tr>
             <td><label for="genre">Genre</label></td>
             <td>
-                <select id="genre">
+                <select name="genre" id="genre">
                     <?php foreach ($genres as $genre) : ?>
                         <option value="<?= $genre ?>"><?= $genre ?></option>
                     <?php endforeach; ?>
