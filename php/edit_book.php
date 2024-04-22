@@ -30,12 +30,39 @@ $row = $stmt->fetch(PDO::FETCH_ASSOC);
 ] = $row;
 
 if (isset($_POST["edit_book_form"])) {
-    $stmt = $pdo->prepare(
-        "UPDATE books SET title=?, description=?, author=?, publishing_year=?, genre=? where book_id=?"
-    );
-    $stmt->execute([$_POST["title"], $_POST["description"], $_POST["author"], $_POST["year"], $_POST["genre"], $id]);
-    header("Location: " . BASE_URL . "manage_book.php?edit=success");
-    exit();
+    try {
+        if ($_POST["title"] == "") {
+            throw new Exception("Title cannot be empty");
+        }
+
+        if ($_POST["description"] == "") {
+            $_POST["description"] = "Not available";
+        }
+
+        if ($_POST["author"] == "") {
+            $_POST["author"] = "Unknown author";
+        }
+
+        $stmt = $pdo->prepare("SELECT * FROM books WHERE title=? AND author=?");
+        $stmt->execute([$_POST["title"], $_POST["author"]]);
+        $total = $stmt->rowCount();
+        if ($total) {
+            throw new Exception("Book already added. Please add another book");
+        }
+
+        if ($_POST["year"] == "") {
+            $_POST["year"] = "Undated";
+        }
+
+        $stmt = $pdo->prepare(
+            "UPDATE books SET title=?, description=?, author=?, publishing_year=?, genre=? where book_id=?"
+        );
+        $stmt->execute([$_POST["title"], $_POST["description"], $_POST["author"], $_POST["year"], $_POST["genre"], $id]);
+        header("Location: " . BASE_URL . "manage_book.php?edit=success");
+        exit();
+    } catch (Exception $e) {
+        $error_msg = $e->getMessage();
+    }
 }
 ?>
 

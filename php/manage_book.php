@@ -18,6 +18,8 @@ $filteredBooks = array_reverse(array_filter($books, fn ($book) => $book["genre"]
 
 <?php if (isset($_GET["delete"])) : ?>
     <p class="success_msg">Book deleted</p>
+<?php elseif (isset($_GET["edit"])) : ?>
+    <p class="success_msg">Book edited</p>
 <?php endif; ?>
 
 <?php foreach ($filteredBooks as $filteredBook) :
