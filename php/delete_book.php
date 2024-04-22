@@ -29,6 +29,11 @@ $row = $stmt->fetch(PDO::FETCH_ASSOC);
 ] = $row;
 
 if (isset($_POST["delete_form"])) {
+    if ($id <= 41) {
+        header("Location: " . BASE_URL . "manage_book.php?deleteDefaultBook=false");
+        exit();
+    }
+
     $stmt = $pdo->prepare("DELETE FROM books where book_id=?");
     $stmt->execute([$id]);
     header("Location: " . BASE_URL . "manage_book.php?delete=success");

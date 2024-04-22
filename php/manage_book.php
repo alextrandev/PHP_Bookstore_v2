@@ -20,6 +20,10 @@ $filteredBooks = array_reverse(array_filter($books, fn ($book) => $book["genre"]
     <p class="success_msg">Book deleted</p>
 <?php elseif (isset($_GET["edit"])) : ?>
     <p class="success_msg">Book edited</p>
+<?php elseif (isset($_GET["editDefaultBook"])) : ?>
+    <p class="error_msg">Default books cannot be edit. Please edit only member added books</p>
+<?php elseif (isset($_GET["deleteDefaultBook"])) : ?>
+    <p class="error_msg">Default books cannot be delete. Please delete only member added books</p>
 <?php endif; ?>
 
 <?php foreach ($filteredBooks as $filteredBook) :

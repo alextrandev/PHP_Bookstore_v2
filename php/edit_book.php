@@ -30,6 +30,11 @@ $row = $stmt->fetch(PDO::FETCH_ASSOC);
 ] = $row;
 
 if (isset($_POST["edit_book_form"])) {
+    if ($id <= 41) {
+        header("Location: " . BASE_URL . "manage_book.php?editDefaultBook=false");
+        exit();
+    }
+
     try {
         if ($_POST["title"] == "") {
             throw new Exception("Title cannot be empty");
