@@ -1,4 +1,6 @@
-<?php require_once './components/header.php';
+<?php
+$manageBookPath = "manage_book.php";
+require_once './components/header.php';
 
 if (!isset($_SESSION["user"])) {
     header("Location: " . BASE_URL . "login.php?login=required");
@@ -23,7 +25,8 @@ $row = $stmt->fetch(PDO::FETCH_ASSOC);
     "title" => $title,
     "description" => $desc,
     "author" => $author,
-    "publishing_year" => $year
+    "publishing_year" => $year,
+    "genre" => $genre
 ] = $row;
 
 if (isset($_POST["delete_form"])) {
@@ -72,14 +75,14 @@ if (isset($_POST["delete_form"])) {
         </tr>
         <tr>
             <td><Label for="year">Publishing year</Label></td>
-            <td><input type="text" name="year" id="year"></td>
+            <td><input type="text" name="year" id="year" value="<?= $year ?? "" ?>"></td>
         </tr>
         <tr>
             <td><label for="genre">Genre</label></td>
             <td>
                 <select name="genre" id="genre">
-                    <?php foreach ($genres as $genre) : ?>
-                        <option value="<?= $genre ?>"><?= $genre ?></option>
+                    <?php foreach ($genres as $item) : ?>
+                        <option value="<?= $item ?>" <?= $item == $genre ? "selected" : "" ?>><?= $item ?></option>
                     <?php endforeach; ?>
                 </select>
             </td>
