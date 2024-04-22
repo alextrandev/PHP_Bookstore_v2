@@ -29,7 +29,7 @@ $row = $stmt->fetch(PDO::FETCH_ASSOC);
 if (isset($_POST["delete_form"])) {
     $stmt = $pdo->prepare("DELETE FROM books where book_id=?");
     $stmt->execute([$id]);
-    header("Location: " . BASE_URL . "manage_book.php");
+    header("Location: " . BASE_URL . "manage_book.php?delete=success");
     exit();
 }
 ?>

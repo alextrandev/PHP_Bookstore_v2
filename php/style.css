@@ -116,7 +116,7 @@ form input {
 .error_msg,
 .success_msg {
   padding: 8px 30px 8px 30px;
-  margin: 0 20px 0 20px;
+  margin: 0 20px 10px 20px;
 }
 
 .error_msg {
