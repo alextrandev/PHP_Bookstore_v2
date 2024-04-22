@@ -25,6 +25,13 @@ $row = $stmt->fetch(PDO::FETCH_ASSOC);
     "author" => $author,
     "publishing_year" => $year
 ] = $row;
+
+if (isset($_POST["delete_form"])) {
+    $stmt = $pdo->prepare("DELETE FROM books where book_id=?");
+    $stmt->execute([$id]);
+    header("Location: " . BASE_URL . "manage_book.php");
+    exit();
+}
 ?>
 
 <h2>Confirm delete book</h2>
