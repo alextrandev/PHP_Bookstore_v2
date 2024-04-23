@@ -22,7 +22,7 @@ if (isset($_POST["add_book_form"])) {
         }
 
         if ($desc == "") {
-            $desc = "Not available";
+            $desc = "No description";
         }
 
         if ($author == "") {

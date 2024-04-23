@@ -14,12 +14,12 @@ if (!isset($_SESSION["user"])) {
 ] = $_SESSION["user"];
 
 $stmt = $pdo->prepare(
-    "SELECT favorites.book_id, books.title, books.description, books.author, books.publishing_year 
+    "SELECT favorites.book_id, books.title, books.description, books.author, books.publishing_year
     FROM favorites INNER JOIN books ON favorites.book_id=books.book_id
     WHERE favorites.user_id=?"
 );
 $stmt->execute([$user_id]);
-$row = $stmt->fetchAll(PDO::FETCH_ASSOC);
+$rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
 ?>
 
 <h2>Welcome <?= $fn ?>!</h2>
@@ -43,6 +43,34 @@ $row = $stmt->fetchAll(PDO::FETCH_ASSOC);
     </tr>
 </table>
 <h3>Your favorite book</h3>
-<?= '<pre>', var_dump($row), '</pre>'; ?>
+
+<?php foreach ($rows as $row) :
+    [
+        "book_id" => $id,
+        "title" => $title,
+        "description" => $desciption,
+        "author" => $author,
+        "publishing_year" => $year
+    ] = $row;
+
+    echo <<<HTML
+        <section class="book">
+            <a href="edit_book.php?id={$id}">
+                <button class="edit_button">Edit</button>
+            </a>
+            <a href="delete_book.php?id={$id}">
+                <button class="delete_button">Delete</button>
+            </a>
+            <a class="bookmark fa fa-star" href="set_favorite.php?id={$id}&profile=true"></a>
+            <h3>$title</h3>
+            <p class="publishing_info">
+                <span class="author">$author</span>,
+                <span class="year">$year</span>
+            </p>
+            <p class="description">$desciption</p>
+        </section>
+    HTML;
+
+endforeach; ?>
 
 <?php require_once './components/footer.php'; ?>

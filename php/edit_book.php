@@ -41,7 +41,7 @@ if (isset($_POST["edit_book_form"])) {
         }
 
         if ($_POST["description"] == "") {
-            $_POST["description"] = "Not available";
+            $_POST["description"] = "No description";
         }
 
         if ($_POST["author"] == "") {
