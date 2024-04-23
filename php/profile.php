@@ -20,6 +20,7 @@ $stmt = $pdo->prepare(
 );
 $stmt->execute([$user_id]);
 $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
+$_SESSION["favorites"] = array();
 ?>
 
 <h2>Welcome <?= $fn ?>!</h2>
@@ -53,6 +54,8 @@ $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
         "publishing_year" => $year
     ] = $row;
 
+    $_SESSION["favorites"][] = $id;
+
     echo <<<HTML
         <section class="book">
             <a href="edit_book.php?id={$id}">
@@ -71,6 +74,6 @@ $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
         </section>
     HTML;
 
-endforeach; ?>
+endforeach;
 
-<?php require_once './components/footer.php'; ?>
+require_once './components/footer.php'; ?>

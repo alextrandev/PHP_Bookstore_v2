@@ -19,9 +19,15 @@ $filteredBooks = array_filter($books, fn ($book) => $book["genre"] == $filterGen
         "genre" => $genre
     ] = $filteredBook;
 
+    $favoriteButtonStyle = in_array($id, $_SESSION['favorites']) ? 'fa-star' : 'fa-star-o';
+
     echo <<<HTML
         <section class="book">
-            <a class="bookmark fa fa-star-o" href="set_favorite.php?id={$id}"></a>
+            <a 
+                class="bookmark fa {$favoriteButtonStyle}" 
+                href="set_favorite.php?id={$id}"
+            >
+            </a>
             <h3>$title</h3>
             <p class="publishing_info">
                 <span class="author">$author</span>,
