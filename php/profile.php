@@ -12,6 +12,14 @@ if (!isset($_SESSION["user"])) {
     "email" => $email,
     "created_at" => $createdAt
 ] = $_SESSION["user"];
+
+$stmt = $pdo->prepare(
+    "SELECT favorites.book_id, books.title, books.description, books.author, books.publishing_year 
+    FROM favorites INNER JOIN books ON favorites.book_id=books.book_id
+    WHERE favorites.user_id=?"
+);
+$stmt->execute([$user_id]);
+$row = $stmt->fetchAll(PDO::FETCH_ASSOC);
 ?>
 
 <h2>Welcome <?= $fn ?>!</h2>
@@ -35,5 +43,6 @@ if (!isset($_SESSION["user"])) {
     </tr>
 </table>
 <h3>Your favorite book</h3>
+<?= '<pre>', var_dump($row), '</pre>'; ?>
 
 <?php require_once './components/footer.php'; ?>
