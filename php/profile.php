@@ -43,20 +43,23 @@ $_SESSION["favorites"] = array();
         <td><?= implode("/", array_reverse(explode("-", explode(" ", $createdAt)[0]))) ?></td>
     </tr>
 </table>
-<h3>Your favorite book</h3>
+<h3>Your favorite books</h3>
 
-<?php foreach ($rows as $row) :
-    [
-        "book_id" => $id,
-        "title" => $title,
-        "description" => $desciption,
-        "author" => $author,
-        "publishing_year" => $year
-    ] = $row;
+<?php
+if (count($rows)) :
 
-    $_SESSION["favorites"][] = $id;
+    foreach ($rows as $row) :
+        [
+            "book_id" => $id,
+            "title" => $title,
+            "description" => $desciption,
+            "author" => $author,
+            "publishing_year" => $year
+        ] = $row;
 
-    echo <<<HTML
+        $_SESSION["favorites"][] = $id;
+
+        echo <<<HTML
         <section class="book">
             <a href="edit_book.php?id={$id}">
                 <button class="edit_button">Edit</button>
@@ -74,6 +77,12 @@ $_SESSION["favorites"] = array();
         </section>
     HTML;
 
-endforeach;
+    endforeach;
+
+else :
+
+    echo "<p>Empty</p>";
+
+endif;
 
 require_once './components/footer.php'; ?>

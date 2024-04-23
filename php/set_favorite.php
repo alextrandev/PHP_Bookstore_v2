@@ -29,9 +29,16 @@ $total = $checkFavoriteStmt->rowCount();
 if ($total) {
     $removeFavoriteStmt = $pdo->prepare("DELETE FROM favorites WHERE user_id=? AND book_id=?");
     $removeFavoriteStmt->execute([$user_id, $book_id]);
+    unset($_SESSION["favorites"][$book_id]);
 } else {
     $addFavoriteStmt = $pdo->prepare("INSERT INTO favorites (user_id, book_id) VALUES (?, ?)");
     $addFavoriteStmt->execute([$user_id, $book_id]);
+    $_SESSION["favorites"][] = $book_id;
+}
+
+if (isset($_GET["profile"])) {
+    header("Location: " . BASE_URL . "profile.php");
+    exit();
 }
 
 header("Location: " . BASE_URL);
