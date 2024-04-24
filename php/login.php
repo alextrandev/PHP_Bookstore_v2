@@ -6,7 +6,7 @@ if (isset($_SESSION["user"])) {
 }
 
 if (isset($_POST["login_as_guest"])) {
-    $_SESSION["user"] = ["user_id" => 999999, "firstname" => "Guest"];
+    $_SESSION["user"] = ["user_id" => 999999, "firstname" => "Guest", "lastname" => "Unknowned", "email" => "Unknowned", "created_at" => "Unknowned"];
     header("Location: " . BASE_URL . "profile.php");
     exit();
 }
