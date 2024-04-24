@@ -36,12 +36,7 @@ if ($total) {
     $_SESSION["favorites"][] = $book_id;
 }
 
-if (isset($_GET["profile"])) {
-    header("Location: " . BASE_URL . "profile.php");
-    exit();
-}
-
-header("Location: " . BASE_URL);
+header("Location: " . $_SERVER['HTTP_REFERER']);
 exit();
 
 require_once './components/footer.php';
