@@ -12,9 +12,41 @@ $stmt->execute();
 $books = $stmt->fetchAll(PDO::FETCH_ASSOC);
 $filterGenre = $_GET["genre"] ?? true; //true mean all genre
 $filteredBooks = array_reverse(array_filter($books, fn ($book) => $book["genre"] == $filterGenre));
+
+// pagination
+$booksPerPage = 5;
+$numberofBooks = count($filteredBooks);
+$numberOfPages = ceil($numberofBooks / $booksPerPage);
+$currentPage = $_GET["page"] ?? 1;
+
+if (!isset($_GET["page"]) || $_GET["page"] <= 0) {
+    $currentPage = 1;
+} elseif ($_GET["page"] > $numberOfPages) {
+    $currentPage = $numberOfPages;
+} else {
+    $currentPage = intval($_GET["page"]);
+}
+
+$firstBookIndex = (intval($currentPage) - 1) * $booksPerPage;
+$displayBooks = array_slice($filteredBooks, $firstBookIndex, $booksPerPage);
 ?>
 
-<h2><?= $filterGenre === true ? "All books" : $filterGenre ?></h2>
+<div class="books_header">
+    <h2><?= $filterGenre === true ? "All books" : $filterGenre ?></h2>
+    <div class="pagination_container">
+        <a href="<?= BASE_URL . $manageBookPath . "?page=" . ($currentPage - 1) ?>">&lt; Previous</a>
+        <div class="pagination_pages">
+            <span>Pages:</span>
+            <?php for ($i = 1; $i <= $numberOfPages; $i++) : ?>
+                <a class="<?= $i == $currentPage ? "bold" : "" ?>" href="<?= BASE_URL . $manageBookPath . "?page=" . ($i) ?>">
+                    <?= $i ?>
+                </a>
+            <?php endfor; ?>
+
+        </div>
+        <a href="<?= BASE_URL . $manageBookPath . "?page=" . ($currentPage + 1) ?>">Next &gt;</a>
+    </div>
+</div>
 
 <?php if (isset($_GET["delete"])) : ?>
     <p class="success_msg">Book deleted</p>
@@ -26,7 +58,7 @@ $filteredBooks = array_reverse(array_filter($books, fn ($book) => $book["genre"]
     <p class="error_msg">Default books cannot be delete. Please delete only member added books</p>
 <?php endif; ?>
 
-<?php foreach ($filteredBooks as $filteredBook) :
+<?php foreach ($displayBooks as $displayBook) :
     [
         "book_id" => $id,
         "title" => $title,
@@ -34,7 +66,7 @@ $filteredBooks = array_reverse(array_filter($books, fn ($book) => $book["genre"]
         "author" => $author,
         "publishing_year" => $year,
         "genre" => $genre
-    ] = $filteredBook;
+    ] = $displayBook;
 
     echo <<<HTML
         <section class="book">
