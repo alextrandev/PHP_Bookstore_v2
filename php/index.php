@@ -50,7 +50,11 @@ $displayBooks = array_slice($filteredBooks, $firstBookIndex, $booksPerPage);
         "genre" => $genre
     ] = $displayBook;
 
-    $favoriteButtonStyle = in_array($id, $_SESSION['favorites']) ? 'fa-star' : 'fa-star-o';
+    if (isset($_SESSION["favorites"]) && in_array($id, $_SESSION['favorites'])) {
+        $favoriteButtonStyle = "fa-star";
+    } else {
+        $favoriteButtonStyle = "fa-star-o";
+    }
 
     echo <<<HTML
         <section class="book">
