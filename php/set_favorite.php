@@ -29,7 +29,7 @@ $total = $checkFavoriteStmt->rowCount();
 if ($total) {
     $removeFavoriteStmt = $pdo->prepare("DELETE FROM favorites WHERE user_id=? AND book_id=?");
     $removeFavoriteStmt->execute([$user_id, $book_id]);
-    unset($_SESSION["favorites"][$book_id]);
+    unset($_SESSION["favorites"][array_search($book_id, $_SESSION["favorites"])]);
 } else {
     $addFavoriteStmt = $pdo->prepare("INSERT INTO favorites (user_id, book_id) VALUES (?, ?)");
     $addFavoriteStmt->execute([$user_id, $book_id]);
